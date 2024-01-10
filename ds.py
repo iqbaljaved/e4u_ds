@@ -88,12 +88,60 @@ def convertTemp(F):
 def sortFunc(arr):
 
 	#Paper work and dry run
-	#
+	#step 1
+	#[0, 6, 3, 1, 2, 4]
+	#[0, 6, 3, 1, 2, 4]
+	#[0, 3, 6, 1, 2, 4]
+	#[0, 3, 1, 2, 6, 4]
+	#[0, 3, 1, 2, 4, 6]
+
+	#step 2
+	#[0, 3, 1, 2, 4, 6]
+	#[0, 1, 3, 2, 4, 6]
+	#[0, 1, 2, 3, 4, 6]
+	#[0, 1, 2, 3, 4, 6]
+
+	"""	
+	if (arr[0] > arr[0+1]):
+		temp     = arr[0] 
+		arr[0]  = arr[0+1]
+		arr[0+1] = temp
+		#output -->[0, 6, 3, 1, 2, 4]
+
+	if (arr[1] > arr[2]):
+		temp     = arr[1] 
+		arr[1]  = arr[2]
+		arr[2] = temp
+		#output -->[0, 3, 6, 1, 2, 4]
+
+	if (arr[2] > arr[3]):
+		temp   = arr[2] 
+		arr[2] = arr[3]
+		arr[3] = temp
+		#output -->[0, 3, 1, 6, 2, 4]
+	"""
+
+	for i in range(0, len(arr)):
+		#i = 3
+		for j in range(0, len(arr)-1-i):
+			#for j = 0, 0, 1  0, 1, 2, 3, 4, 5
+			#for j = 1, 1, 2
+			#for j = 2, 2, 3
+			#for j = 3, 3, 4
+			#for j = 4, 4, 5
+
+			if (arr[j] > arr[j+1]):	
+				temp     = arr[j] 
+				arr[j]   = arr[j+1]
+				arr[j+1] = temp
+				#output -->[0, 6, 3, 1, 2, 4]
+	return arr
+
 
 
 #Entry Point Function
 if __name__ == "__main__":
-
+	
 	#print("prime ", isPrime(100))
 	print("C = ", convertTemp(100))
 
@@ -101,17 +149,22 @@ if __name__ == "__main__":
 	unSorted  = [0, 6, 3, 1, 2, 4]
 
 	#expect output array or list
-	sortedArr = [0, 1, 2, 3, 4, 6]
+	#sortedArr = [0, 1, 2, 3, 4, 6]
 
+	sortedArr = sortFunc(unSorted)
 
+	print("sortedArr ", sortedArr)
+	print("sortedArr ", unSorted)
+	
 
+	"""
+	print ("len : ", len(unSorted))
+	for i in range(0, len(unSorted)):
+		print("for i : ", i)
+		for j in range(0, len(unSorted)-1-i):
+			print("    j : ", j, unSorted[j], unSorted[j+1])
 
-
-
-
-
-
-
+	"""
 
 
 
