@@ -191,9 +191,101 @@ arr=[12,23,4,78,34]
 result = searchmax(arr)
 print (result )
 
+'''
+min=0
+arr=[3,9, 4, 6,2,10]
+search index for minimum element that is 4
+min=4
+temp =arr[min]
+arr[min]=arr[0]
+arr[0]= temp
+arr=[2,9,4,6,3,10]
 
+search index for minimum element in array from index 1 that is [4]
+min=4
+temp =arr[min]
+arr[min]=arr[1]
+arr[0]= temp
+arr=[2,3,4,6,9,10]
 
+search index for minimum element in array from index 2 that is 2
+min=2
+no need to swap
+arr= [2,3,4,6,9,10]
+search index for minimum element in array from index 3 that is 3
+min=3
+no need to swap
+arr= [2,3,4,6,9,10]
+search index for minimum element in array from index 3 that is 3
+min=3
+no need to swap
 
+'''
+
+def mergeSort(arr):
+    for i in range(0,len(arr)):
+        min=i
+        for j  in range(i,len(arr)-1):
+            if arr[j+1] < arr[min]:
+                min =j+1
+                
+        temp=arr[min]
+        arr[min]=arr[i]
+        arr[i]=temp
+    
+    return arr
+arr=[3,9, 4, 6,2,10]
+result=mergeSort(arr)
+print (result)
+
+#sorting Algorithm 
+
+'''
+min=0
+arr=[3,9, 4, 6,2,10]
+search index for minimum element that is 4
+min=4
+temp =arr[min]
+arr[min]=arr[0]
+arr[0]= temp
+arr=[2,9,4,6,3,10]
+
+search index for minimum element in array from index 1 that is [4]
+min=4
+temp =arr[min]
+arr[min]=arr[1]
+arr[0]= temp
+arr=[2,3,4,6,9,10]
+
+search index for minimum element in array from index 2 that is 2
+min=2
+no need to swap
+arr= [2,3,4,6,9,10]
+search index for minimum element in array from index 3 that is 3
+min=3
+no need to swap
+arr= [2,3,4,6,9,10]
+search index for minimum element in array from index 3 that is 3
+min=3
+no need to swap
+
+'''
+
+def mergeSort(arr):
+    for i in range(0,len(arr)):
+        min=i
+        for j  in range(i,len(arr)-1):
+            if arr[j+1] < arr[min]:
+                min =j+1
+                
+        temp=arr[min]
+        arr[min]=arr[i]
+        arr[i]=temp
+    
+    return arr
+arr=[3,9, 4, 6,2,10]
+result=mergeSort(arr)
+print (result)
 
 
 
