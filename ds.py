@@ -166,7 +166,30 @@ if __name__ == "__main__":
 
 	"""
 
+'''
+max=0
+[12,23,4,78,34]
+arr[max]>arr[1]
+max=1
+arr[max]>arr[2]
+max=1
+arr[1]>arr[3]
+max=3
+arr[max]>arr[4]
+max=3
 
+'''
+
+def searchmax (arr):
+    max=0
+    for x in range (0, len (arr)-1):
+        if arr[x+1] > arr[max]:
+            max=x+1
+    return max
+#arr = list(input ("Enter your list"))
+arr=[12,23,4,78,34]
+result = searchmax(arr)
+print (result )
 
 
 
